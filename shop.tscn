@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://dy8v1nmvav4md"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_013bi"]
+[ext_resource type="Texture2D" uid="uid://bl7heu265mlm1" path="res://circle.png" id="2_ev0a2"]
+[ext_resource type="Texture2D" uid="uid://c2c5ruilc3nfo" path="res://oak_woods_v1.0/decorations/shop_anim.png" id="2_hg658"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewykk"]
+atlas = ExtResource("2_hg658")
+region = Rect2(0, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brk0l"]
+atlas = ExtResource("2_hg658")
+region = Rect2(118, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6kba"]
+atlas = ExtResource("2_hg658")
+region = Rect2(236, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5kig"]
+atlas = ExtResource("2_hg658")
+region = Rect2(354, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em1fq"]
+atlas = ExtResource("2_hg658")
+region = Rect2(472, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8t8c"]
+atlas = ExtResource("2_hg658")
+region = Rect2(590, 0, 118, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4umh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewykk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brk0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6kba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5kig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em1fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8t8c")
+}],
+"loop": true,
+"name": &"shop",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ij2mq"]
+radius = 80.0062
+
+[node name="shop" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_013bi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a4umh")
+animation = &"shop"
+autoplay = "shop"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 22)
+shape = SubResource("CircleShape2D_ij2mq")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="roof" type="PointLight2D" parent="Node2D"]
+position = Vector2(3.8147e-06, -2.125)
+scale = Vector2(0.256024, 0.0728125)
+color = Color(0.486275, 0, 0.572549, 1)
+texture = ExtResource("2_ev0a2")
+
+[node name="lamp_right" type="PointLight2D" parent="Node2D"]
+position = Vector2(50, 34)
+scale = Vector2(0.1425, 0.1265)
+color = Color(0.933632, 0.36888, 0.0866772, 1)
+energy = 4.0
+texture = ExtResource("2_ev0a2")
+
+[node name="lamp_left" type="PointLight2D" parent="Node2D"]
+position = Vector2(-48, 36)
+scale = Vector2(0.175625, 0.175625)
+color = Color(0.933333, 0.368627, 0.0862745, 1)
+energy = 4.0
+texture = ExtResource("2_ev0a2")
+
+[node name="deolbaeb" type="PointLight2D" parent="Node2D"]
+position = Vector2(-1, 47)
+scale = Vector2(0.0575, 0.05375)
+texture = ExtResource("2_ev0a2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

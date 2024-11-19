@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://duraa3xbnppff"]
+
+[ext_resource type="Texture2D" uid="uid://bl7heu265mlm1" path="res://circle.png" id="1_fp81p"]
+[ext_resource type="Script" path="res://bg.gd" id="1_qgt4f"]
+[ext_resource type="Texture2D" uid="uid://b4mmnsjs1sic6" path="res://oak_woods_v1.0/background/background_layer_1.png" id="2_exbd6"]
+[ext_resource type="PackedScene" uid="uid://d1fgu2eos6e0t" path="res://Fire.tscn" id="2_sli0u"]
+[ext_resource type="Texture2D" uid="uid://dbds5sudmxjs" path="res://oak_woods_v1.0/background/background_layer_2.png" id="3_a1eer"]
+[ext_resource type="Texture2D" uid="uid://biv2bd66tu5wm" path="res://oak_woods_v1.0/background/background_layer_3.png" id="4_nx84g"]
+
+[sub_resource type="GDScript" id="GDScript_wcf7y"]
+script/source = "extends Node2D
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed('close'):
+		get_tree().change_scene_to_file('res://menu.tscn')
+
+
+func _on_play_pressed():
+	get_tree().change_scene_to_file(\"res://menu.tscn\")
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+"
+
+[node name="Death menu" type="Node2D"]
+script = SubResource("GDScript_wcf7y")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(520, 540)
+scale = Vector2(0.75, 0.525)
+color = Color(0.683784, 0, 0.192296, 1)
+energy = 4.54
+texture = ExtResource("1_fp81p")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(514, 330)
+scale = Vector2(1.405, 0.525)
+color = Color(0, 0.501961, 0, 1)
+energy = 7.66
+texture = ExtResource("1_fp81p")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 243.0
+offset_top = 236.0
+offset_right = 802.0
+offset_bottom = 413.0
+theme_override_font_sizes/font_size = 50
+text = "main menu
+"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 343.0
+offset_top = 464.0
+offset_right = 684.0
+offset_bottom = 569.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("1_qgt4f")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1151.94, 0)
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="BG/ParallaxLayer"]
+modulate = Color(0.658824, 0.658824, 0.658824, 0.47451)
+position = Vector2(577, 327)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("2_exbd6")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1154.99, 0)
+
+[node name="BackgroundLayer2" type="Sprite2D" parent="BG/ParallaxLayer2"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(576.667, 325.5)
+scale = Vector2(3.61667, 3.61667)
+texture = ExtResource("3_a1eer")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(1152.9, 0)
+
+[node name="BackgroundLayer3" type="Sprite2D" parent="BG/ParallaxLayer3"]
+modulate = Color(0.470588, 0.470588, 0.470588, 1)
+position = Vector2(575.5, 325)
+scale = Vector2(3.60313, 3.58889)
+texture = ExtResource("4_nx84g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 435.0
+offset_top = 129.0
+offset_right = 582.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 50
+text = "death"
+
+[node name="Fire" parent="." instance=ExtResource("2_sli0u")]
+position = Vector2(398, 157)
+
+[node name="Fire2" parent="." instance=ExtResource("2_sli0u")]
+position = Vector2(600, 157)
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

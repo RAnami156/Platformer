@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://cd5834cadd3tv"]
+
+[ext_resource type="Script" path="res://collect/gold.gd" id="1_v6w5j"]
+[ext_resource type="Texture2D" uid="uid://bepf4jlc2rfg" path="res://oak_woods_v1.0/MonedaD.png" id="1_xuqw0"]
+[ext_resource type="Texture2D" uid="uid://bl7heu265mlm1" path="res://circle.png" id="3_d0ull"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdkgq"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhu15"]
+atlas = ExtResource("1_xuqw0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk16n"]
+atlas = ExtResource("1_xuqw0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fggwi"]
+atlas = ExtResource("1_xuqw0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qktt"]
+atlas = ExtResource("1_xuqw0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uhfs"]
+atlas = ExtResource("1_xuqw0")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_poaoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhu15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk16n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fggwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qktt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uhfs")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[node name="Gold" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_v6w5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pdkgq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.4375, 0.4375)
+sprite_frames = SubResource("SpriteFrames_poaoq")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-0.5, 0.5)
+scale = Vector2(0.02625, 0.02625)
+texture = ExtResource("3_d0ull")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1fgu2eos6e0t"]
+
+[ext_resource type="Texture2D" uid="uid://cvuyavv05aopm" path="res://oak_woods_v1.0/fire/burning_end_1.png" id="1_gli46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6elpl"]
+atlas = ExtResource("1_gli46")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruibf"]
+atlas = ExtResource("1_gli46")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ci4"]
+atlas = ExtResource("1_gli46")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hvg1"]
+atlas = ExtResource("1_gli46")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb065"]
+atlas = ExtResource("1_gli46")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7jlpi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6elpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruibf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64ci4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hvg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb065")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Fire" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.66667, 2.15625)
+sprite_frames = SubResource("SpriteFrames_7jlpi")
+autoplay = "default"
+frame_progress = 0.686636

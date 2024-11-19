@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cot7icotuyngr"]
+
+[ext_resource type="Script" path="res://interface.gd" id="1_u32o4"]
+[ext_resource type="Script" path="res://Player/label.gd" id="2_txov0"]
+
+[node name="Interface" type="CanvasLayer"]
+script = ExtResource("1_u32o4")
+
+[node name="Fps" type="Label" parent="."]
+offset_left = 1069.0
+offset_top = 2.0
+offset_right = 1109.0
+offset_bottom = 25.0
+text = "fps:"
+script = ExtResource("2_txov0")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 411.0
+offset_top = 9.0
+offset_right = 627.0
+offset_bottom = 42.0
+text = "MENU"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
