@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player = null  
 var speed = 100
 var chase = false
+var damage = 10
 
 enum {
 	IDLE,
@@ -96,3 +97,7 @@ func attack_state():
 
 func _on_attack_rage_body_entered(body: Node2D) -> void:
 	state = ATTACK
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	Signals.emit_signal("enemy_attack", damage)
