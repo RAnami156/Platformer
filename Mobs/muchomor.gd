@@ -155,7 +155,7 @@ func _on_hit_box_area_entered(area):
 
 func _on_mobe_heals_no_health() -> void:
 	kill_count += 1
-	print(kill_count, " kill")
+	print("player:",kill_count, " kill☠️")
 	state = DEATH
 	
 

@@ -27,7 +27,7 @@ func _on_damage_received (player_damage):
 	damage_text.text = str(player_damage)
 	animPlayer.stop()
 	animPlayer.play("damage_text")
-	print ("-",player_damage)
+	print ("enemy:","-",player_damage,"🔪")
 	if health <= 0 :
 		emit_signal("no_health")
 	else :
