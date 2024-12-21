@@ -177,7 +177,10 @@ func attack_freeze() :
 	attack_down = false 
 	
 func damage_state() :
-	print(health)
+	if health == 0:
+		print("death")
+	else :
+		print(health,"hp")
 	velocity.x = 0
 	anim.play("Damage")
 	#await anim.animation_finished

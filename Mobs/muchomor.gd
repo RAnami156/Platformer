@@ -38,6 +38,7 @@ var chase = false
 var speed = 50
 var damage = 20
 var is_dead = false  # Флаг для проверки, что объект "мертв" и не должен реагировать
+var kill_count = 0
 
 func _ready():
 	Signals.connect("player_position_update", Callable(self, "_on_player_position_update"))
@@ -153,7 +154,10 @@ func _on_hit_box_area_entered(area):
 	Signals.emit_signal("enemy_attack", damage)
 
 func _on_mobe_heals_no_health() -> void:
+	kill_count += 1
+	print(kill_count, " kill")
 	state = DEATH
+	
 
 func _on_mobe_heals_damage_received() -> void:
 	if is_dead:
