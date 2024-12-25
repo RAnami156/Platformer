@@ -18,9 +18,7 @@ var state = MORNING
 var day_count: int
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("close"):
-		get_tree().change_scene_to_file("res://menu.tscn")
-		
+		pass
 func _ready():
 	hp_bar.max_value = player.max_health
 	hp_bar.value = hp_bar.max_value 
