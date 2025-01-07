@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqwjys21u1ftw"
-path="res://.godot/imported/an-elegant-loading-screen-design-for-a-game-studio (1).png-e9a2b1e6e63841ecba5ee4a34ee7f82b.ctex"
+path="res://.godot/imported/2.png-3f238cfe6181f9f93f40cee36336f408.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://an-elegant-loading-screen-design-for-a-game-studio (1).png"
-dest_files=["res://.godot/imported/an-elegant-loading-screen-design-for-a-game-studio (1).png-e9a2b1e6e63841ecba5ee4a34ee7f82b.ctex"]
+source_file="res://2.png"
+dest_files=["res://.godot/imported/2.png-3f238cfe6181f9f93f40cee36336f408.ctex"]
 
 [params]
 

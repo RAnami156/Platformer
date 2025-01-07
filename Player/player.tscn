@@ -1068,8 +1068,7 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, -4)
-scale = Vector2(0.0975, 0.0975)
+scale = Vector2(0.27, 0.24)
 energy = 0.73
 texture = ExtResource("5_vldls")
 

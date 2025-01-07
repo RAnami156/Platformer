@@ -14,7 +14,7 @@ config/name="game 0.4.1"
 config/version="0.1"
 run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-boot_splash/image="res://an-elegant-loading-screen-design-for-a-game-studio (1).png"
+boot_splash/image="res://2.png"
 
 [autoload]
 
