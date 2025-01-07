@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cot7icotuyngr"]
 
-[ext_resource type="Script" path="res://interface.gd" id="1_u32o4"]
+[ext_resource type="Script" path="res://script/interface.gd" id="1_u32o4"]
 [ext_resource type="Script" path="res://Player/label.gd" id="2_txov0"]
 
 [node name="Interface" type="CanvasLayer"]

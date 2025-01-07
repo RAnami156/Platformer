@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Mobs/skelet.gd" id="1_m64eb"]
 [ext_resource type="Texture2D" uid="uid://dwj0opbww8sbh" path="res://Monsters_Creatures_Fantasy/Skeleton/Walk.png" id="2_kt75u"]
 [ext_resource type="Texture2D" uid="uid://cxl1l6faqn4vj" path="res://Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="2_l4nbu"]
-[ext_resource type="Script" path="res://damage_box.gd" id="5_4yw8p"]
+[ext_resource type="Script" path="res://script/damage_box.gd" id="5_4yw8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjril"]
 atlas = ExtResource("2_l4nbu")

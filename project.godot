@@ -12,14 +12,13 @@ config_version=5
 
 config/name="game 0.4.1"
 config/version="0.1"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://shop_lev.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/image="res://an-elegant-loading-screen-design-for-a-game-studio (1).png"
-config/icon="res://icon.svg"
 
 [autoload]
 
-Signals="*res://signals.gd"
+Signals="*res://script/signals.gd"
 
 [editor]
 
@@ -143,3 +142,4 @@ e={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 driver/depth_prepass/enable=false
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

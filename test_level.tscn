@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d3a0uoguv5va6"]
 
-[ext_resource type="Script" path="res://test_level.gd" id="1_q07vd"]
+[ext_resource type="Script" path="res://script/test_level.gd" id="1_q07vd"]
 [ext_resource type="Texture2D" uid="uid://bhxnu5kqkrnmw" path="res://oak_woods_v1.0/oak_woods_tileset.png" id="1_qkwgy"]
 [ext_resource type="PackedScene" uid="uid://c0phno5qbfrrr" path="res://Mobs/skelet.tscn" id="2_ie1yu"]
 [ext_resource type="PackedScene" uid="uid://rfewogk3wlcr" path="res://Player/player.tscn" id="3_pm02r"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cfcyy24ummsoy"]
 
 [ext_resource type="Texture2D" uid="uid://b2aer66bof4o1" path="res://oak_woods_v1.0/Sprite-0003.png" id="1_2264e"]
-[ext_resource type="Script" path="res://mobe_heals.gd" id="1_aoq1d"]
+[ext_resource type="Script" path="res://script/mobe_heals.gd" id="1_aoq1d"]
 [ext_resource type="Texture2D" uid="uid://dffahsm26nh35" path="res://oak_woods_v1.0/Sprite-0002 (1).png" id="2_m06n5"]
 
 [sub_resource type="Animation" id="Animation_3kpuw"]

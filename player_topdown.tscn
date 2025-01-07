@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://cvfsswsglj3ad"]
+[gd_scene load_steps=41 format=3 uid="uid://cvfsswsglj3ad"]
 
-[ext_resource type="Script" path="res://player_topdown.gd" id="1_5amro"]
+[ext_resource type="Script" path="res://script/player_topdown.gd" id="1_5amro"]
 [ext_resource type="Texture2D" uid="uid://bb0jfbrri12l0" path="res://Player/player.png" id="1_n5h53"]
+[ext_resource type="Script" path="res://Player/label.gd" id="3_r3vvq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3s0t8"]
 atlas = ExtResource("1_n5h53")
@@ -295,4 +296,24 @@ script = ExtResource("1_5amro")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6jjcl")
-animation = &"Back_walk"
+animation = &"Idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fps" type="Label" parent="CanvasLayer"]
+offset_left = 1069.0
+offset_top = 2.0
+offset_right = 1109.0
+offset_bottom = 25.0
+text = "fps:"
+script = ExtResource("3_r3vvq")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 450.0
+offset_top = 10.0
+offset_right = 666.0
+offset_bottom = 43.0
+text = "MENU"
