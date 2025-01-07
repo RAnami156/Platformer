@@ -1050,7 +1050,7 @@ shape = SubResource("CapsuleShape2D_rdj4u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -13)
 sprite_frames = SubResource("SpriteFrames_pur30")
-animation = &"Idle"
+animation = &"Attack"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]

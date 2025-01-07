@@ -65,7 +65,11 @@ func _on_player_health_changet(new_health):
 
 
 func _on_player_health_changed(new_health: Variant) -> void:
-	hp_bar.value = new_health
+	if hp_bar != null:
+		hp_bar.value = new_health
+	else:
+		print("hp_bar is null")
+
 	
 
 
