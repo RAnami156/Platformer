@@ -180,6 +180,7 @@ position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_qss2v")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("4_rytdk")
 

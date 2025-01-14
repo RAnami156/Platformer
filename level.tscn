@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c622bgmfaqdx6"]
+[gd_scene load_steps=33 format=3 uid="uid://c622bgmfaqdx6"]
 
 [ext_resource type="PackedScene" uid="uid://rfewogk3wlcr" path="res://Player/player.tscn" id="1_8dss1"]
 [ext_resource type="Script" path="res://script/level.gd" id="1_eqx0y"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://c0phno5qbfrrr" path="res://Mobs/skelet.tscn" id="9_lpo6b"]
 [ext_resource type="Texture2D" uid="uid://bl7heu265mlm1" path="res://circle.png" id="10_gpj8s"]
 [ext_resource type="Texture2D" uid="uid://td3xsvaewhlw" path="res://oak_woods_v1.0/decorations/sign.png" id="12_qfro7"]
+[ext_resource type="PackedScene" uid="uid://cgkrewk0k8hc5" path="res://utilse/lantern.tscn" id="12_sqr4u"]
 [ext_resource type="PackedScene" uid="uid://cqhxdsykjuw2r" path="res://pets/bat.tscn" id="13_obxbg"]
+[ext_resource type="PackedScene" uid="uid://bxav4rl5gwq2e" path="res://chest.tscn" id="14_0fcrh"]
 [ext_resource type="PackedScene" uid="uid://d0emk7a06y3gh" path="res://Mobs/muchomor.tscn" id="14_8w43m"]
 [ext_resource type="Texture2D" uid="uid://b2aer66bof4o1" path="res://oak_woods_v1.0/Sprite-0003.png" id="14_weaxo"]
 [ext_resource type="Texture2D" uid="uid://1wao1sfd3anp" path="res://oak_woods_v1.0/Sprite-0001.png" id="15_25vvw"]
@@ -1963,7 +1965,7 @@ position = Vector2(534, 997)
 position = Vector2(1242, 1102)
 
 [node name="Muchomor" parent="Monster" instance=ExtResource("14_8w43m")]
-position = Vector2(658, 608)
+position = Vector2(780, 608)
 
 [node name="Skelet" parent="Monster" instance=ExtResource("9_lpo6b")]
 position = Vector2(-1676, 1119)
@@ -1979,6 +1981,9 @@ texture = ExtResource("12_qfro7")
 position = Vector2(-0.423064, -1.58162)
 scale = Vector2(0.265, 0.245787)
 texture = ExtResource("10_gpj8s")
+
+[node name="Chest" parent="Dikor/Sign" instance=ExtResource("14_0fcrh")]
+position = Vector2(102.438, 12.3367)
 
 [node name="Pets" type="Node2D" parent="."]
 
@@ -2051,7 +2056,6 @@ autostart = true
 position = Vector2(25, 615)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.95
 blend_mode = 1
 range_layer_min = -1
@@ -2062,6 +2066,10 @@ autostart = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_6qpcv")
+
+[node name="lantern" parent="." instance=ExtResource("12_sqr4u")]
+position = Vector2(654, 616)
+scale = Vector2(1, 1)
 
 [connection signal="health_changed" from="Player/Player" to="." method="_on_player_health_changed"]
 [connection signal="timeout" from="Collect/Timer" to="Collect" method="_on_timer_timeout"]

@@ -10,11 +10,13 @@ config_version=5
 
 [application]
 
-config/name="game 0.4.1"
+config/name="Platformer"
+config/description="My best game "
 config/version="0.1"
 run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/image="res://2.png"
+config/icon="res://ghost.png"
 
 [autoload]
 
